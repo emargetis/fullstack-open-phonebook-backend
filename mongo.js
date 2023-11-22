@@ -23,14 +23,14 @@ const Contact = mongoose.model('Contact', phonebookSchema)
 if (process.argv.length<4) {
   Contact
     .find({})
-    .then(result=> {
-      console.log(`phonebook:`)
+    .then(result => {
+      console.log('phonebook:')
       result.forEach(contact => {
-        console.log(`${contact.name} ${contact.phoneNumber}`);
+        console.log(`${contact.name} ${contact.phoneNumber}`)
       })
       mongoose.connection.close()
     })
-} else { 
+} else {
   const contactName = process.argv[3]
   const contactNumber = process.argv[4]
 

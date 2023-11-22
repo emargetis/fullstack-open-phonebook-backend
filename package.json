@@ -10,7 +10,8 @@
     "build:ui": "rm -rf dist && cd ../fullstack-open-phonebook-frontend/ && npm run build && cp -r dist ../fullstack-open-phonebook-backend",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "Erik Margetis",
   "license": "ISC",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.11",
+    "eslint": "^8.54.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1"
   }
