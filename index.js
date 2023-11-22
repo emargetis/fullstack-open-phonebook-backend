@@ -1,23 +1,23 @@
 const express = require('express');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const cors = require('cors');
 const app = express()
 
 app.use(express.static('dist'));
 app.use(express.json());
 app.use(cors());
-app.use(morgan(function (tokens, req, res) {
-  morgan.token('body', function (req, res) { return JSON.stringify(req.body)});
+// app.use(morgan(function (tokens, req, res) {
+//   morgan.token('body', function (req, res) { return JSON.stringify(req.body)});
 
-  return [
-    tokens.method(req, res),
-    tokens.url(req, res),
-    tokens.status(req, res),
-    tokens.res(req, res, 'content-length'), '-',
-    tokens['response-time'](req, res), 'ms',
-    tokens.body(req, res),
-  ].join(' ')
-}));
+//   return [
+//     tokens.method(req, res),
+//     tokens.url(req, res),
+//     tokens.status(req, res),
+//     tokens.res(req, res, 'content-length'), '-',
+//     tokens['response-time'](req, res), 'ms',
+//     tokens.body(req, res),
+//   ].join(' ')
+// }));
 
 let contacts = [
   { 
