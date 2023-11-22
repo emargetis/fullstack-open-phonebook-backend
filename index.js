@@ -108,8 +108,6 @@ app.post('/api/persons', (request, response) => {
 
   contacts.push(person);
 
-  console.log(contacts);
-
   response.json(person);
 })
 
